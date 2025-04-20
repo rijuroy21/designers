@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% load static %}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ freelancer.name }} - Freelancer Profile</title>
+  <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <div class="logo">HireTalent</div>
+    <ul class="nav-links">
+      <li><a href="{% url 'home' %}">Home</a></li>
+      <li><a href="{% url 'categories' %}">Categories</a></li>
+      <li><a href="{% url 'how_it_works' %}">How It Works</a></li>
+      <li><a href="{% url 'contact' %}">Contact</a></li>
+      <li><a href="{% url 'logout' %}">Logout</a></li>
+      <li><a href="{% url 'my_account' %}">My Account</a></li>
+    </ul>
+  </nav>
+
+  <section class="profile">
+    <h1>{{ freelancer.name }}</h1>
+    <div class="profile-details">
+      <div class="details">
+        <h2>{{ freelancer.category }}</h2>
+        <h3>{{ freelancer.subcategory }}</h3>
+        <p>{{ freelancer.email }}</p>
+        <p><strong>Portfolio URL:</strong> <a href="{{ freelancer.portfolio_url }}" target="_blank">{{ freelancer.portfolio_url }}</a></p>
+        <p><strong>Bio:</strong></p>
+        <p>{{ freelancer.bio }}</p>
+      </div>
+
+      <!-- Hire Now Button -->
+      <div class="hire-now">
+        <a href="{% url 'hire_freelancer' freelancer.id %}">
+          <button class="hire-btn">Hire Now</button>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 HireTalent. Connect with clients and grow your career.</p>
+  </footer>
+
+</body>
+
+</html>
