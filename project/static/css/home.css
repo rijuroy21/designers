@@ -102,6 +102,7 @@ button:hover {
     font-size: 16px;
 }
 
+
 /* Categories Section */
 .categories {
     text-align: center;
@@ -167,4 +168,10 @@ footer {
     background: #0c3f27;
     color: #ffffff;
     font-size: 14px;
+}
+
+/* Go Back Button */
+#goBackButton {
+    display: none;
+    margin-top: 20px; /* Adds some space above the button */
 }

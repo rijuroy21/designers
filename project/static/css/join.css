@@ -97,6 +97,64 @@ body {
     resize: none;
 }
 
+/* Work Images Section */
+#image-input-container {
+    margin-top: 20px;
+}
+
+.image-input-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.image-input-container input[type="file"] {
+    flex-grow: 1;
+}
+
+/* Adjusted Remove Button to fit its content */
+.remove-btn {
+    width: auto;    /* Set width to auto to fit the text */
+    height: 45px;   /* Adjusted to match input height */
+    padding: 0 5px; /* Horizontal padding to fit text */
+    font-size: 12px; /* Adjusted font size */
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 5px;  /* Slightly rounded */
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.remove-btn:hover {
+    background-color: #c82333;
+}
+
+/* Plus Button */
+#add-image-btn {
+    padding: 3px 6px;  /* Reduced padding */
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 14px;  /* Small font size */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;  /* Smaller width */
+    height: 25px;  /* Smaller height */
+}
+
+#add-image-btn:hover {
+    background-color: #0056b3;
+}
+
 /* Submit Button */
 .freelancer-form button {
     width: 100%;

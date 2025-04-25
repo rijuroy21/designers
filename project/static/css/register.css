@@ -7,8 +7,9 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    /* background-color: #f4f4f4; */
-    background-image:url(../images/colorkit.png);
+    background-image: url(../images/colorkit.png);
+    background-size: cover;
+    background-position: center;
     color: #333;
     display: flex;
     justify-content: center;
@@ -18,76 +19,103 @@ body {
     padding: 20px;
 }
 
-h1 {
+/* Title */
+.register-title {
     color: #2c3e50;
     margin-bottom: 20px;
     font-size: 2rem;
     font-weight: 600;
 }
 
-/* Form Styles */
-form {
+/* Container */
+.register-container {
     background-color: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 400px;
-    box-sizing: border-box;
-    margin-top: 20px;
-}
-
-form p {
-    font-size: 1rem;
-    margin-bottom: 20px;
     text-align: center;
-    color: #7f8c8d;
 }
 
-form button {
+/* Form */
+.register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.register-form input[type="text"],
+.register-form input[type="email"],
+.register-form input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.register-form input:focus {
+    border-color: #249d79;
+    outline: none;
+}
+
+/* Register Button */
+.register-form input[type="submit"] {
     background-color: #249d79;
     color: white;
     border: none;
     padding: 12px 20px;
     font-size: 1rem;
-    width: 100%;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-form button:hover {
-    background-color: #fcfcfc;
+.register-form input[type="submit"]:hover {
+    background-color: #1e7a61;
+    transform: scale(1.02);
 }
 
-/* Form Input Fields */
-form input[type="text"],
-form input[type="password"],
-form input[type="email"] {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
-    transition: border-color 0.3s ease;
+/* Link Below Form */
+.register-links {
+    margin-top: 20px;
+    font-size: 14px;
 }
 
-form input[type="text"]:focus,
-form input[type="password"]:focus,
-form input[type="email"]:focus {
-    border-color: #249d79;
-    outline: none;
-}
-
-/* Link Styles */
-p a {
-    color:#000000;
-    text-decoration: none;
+.register-links a {
+    color: #000000;
     font-weight: bold;
+    text-decoration: none;
     transition: color 0.3s ease;
 }
 
-p a:hover {
-    color:#ffffff;
+.register-links a:hover {
+    color: #ffffff;
+    background-color: #249d79;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .register-container {
+        padding: 25px;
+        max-width: 90%;
+    }
+
+    .register-title {
+        font-size: 1.8rem;
+    }
+
+    .register-form input,
+    .register-form input[type="submit"] {
+        font-size: 1rem;
+    }
 }

@@ -15,22 +15,23 @@
         <ul class="nav-links">
             <li><a href="{% url 'home' %}">Home</a></li>
             <li><a href="{% url 'categories' %}">Categories</a></li>
-            <li><a href="{% url 'how_it_works' %}">How It Works</a></li>
-            <li><a href="{% url 'contact' %}">Contact</a></li>
-            <li><a href="{% url 'logout' %}">Logout</a></li>
             <li><a href="{% url 'my_account' %}">My Account</a></li>
+            <li><a href="{% url 'logout' %}">Logout</a></li>
         </ul>
     </nav>
 
+    <!-- Hero Section -->
     <header class="hero">
         <h1>Join as a Freelancer</h1>
         <p>Showcase your skills and connect with clients worldwide.</p>
     </header>
 
+    <!-- Freelancer Registration Form Section -->
     <section class="freelancer-form">
         <h2>Register as a Freelancer</h2>
         <form action="{% url 'join' %}" method="POST" enctype="multipart/form-data">
             {% csrf_token %}
+            
             <label for="name">Full Name:</label>
             <input type="text" id="name" name="name" required>
 
@@ -60,20 +61,29 @@
 
             <!-- Work Images Section -->
             <label for="work_images">Upload Work Images:</label>
-            <input type="file" id="work_images" name="work_images" accept="image/*" multiple>
+            <div id="image-input-container">
+                <div class="image-input-container">
+                    <input type="file" id="work_images_1" name="work_images" accept="image/*">
+                    <button type="button" class="remove-btn" onclick="removeImageInput(this)">Remove</button>
+                </div>
+            </div>
+            
+            <button type="button" id="add-image-btn">+</button>
             
             <button type="submit">Join Now</button>
         </form>
     </section>
 
+    <!-- Footer -->
     <footer>
         <p>&copy; 2025 HireTalent. Connect with clients and grow your career.</p>
     </footer>
 
     <script>
+        // Handle Subcategory Dropdown Population Based on Category
         document.getElementById('category').addEventListener('change', function () {
             const subcategoryDropdown = document.getElementById('subcategory');
-            subcategoryDropdown.innerHTML = '<option value="">-- Select a Subcategory --</option>';
+            subcategoryDropdown.innerHTML = '<option value="">-- Select a Subcategory --</option>'; // Reset subcategory options
 
             const subcategories = {
                 "UI/UX & Web Designers": ["UI/UX Designer", "Web Designer", "Mobile App Designer", "Wireframe & Prototype Designer"],
@@ -93,6 +103,36 @@
                 });
             }
         });
+
+        // Handle Dynamic Image Input Addition
+        let imageInputCount = 1;  // Start with one input field
+        
+        document.getElementById('add-image-btn').addEventListener('click', function () {
+            imageInputCount++;  // Increment the counter
+            const newInputContainer = document.createElement('div');
+            newInputContainer.classList.add('image-input-container');
+
+            const newInput = document.createElement('input');
+            newInput.type = 'file';
+            newInput.id = 'work_images_' + imageInputCount;
+            newInput.name = 'work_images';
+            newInput.accept = 'image/*';
+
+            const removeButton = document.createElement('button');
+            removeButton.type = 'button';
+            removeButton.classList.add('remove-btn');
+            removeButton.textContent = 'Remove';
+            removeButton.setAttribute('onclick', 'removeImageInput(this)');
+
+            newInputContainer.appendChild(newInput);
+            newInputContainer.appendChild(removeButton);
+            document.getElementById('image-input-container').appendChild(newInputContainer);
+        });
+
+        // Function to remove an image input field
+        function removeImageInput(button) {
+            button.parentElement.remove();  // Remove the entire input container
+        }
     </script>
 
 </body>

@@ -16,14 +16,14 @@
     <ul class="nav-links">
       <li><a href="#">Home</a></li>
       <li><a href="{% url 'categories' %}">Categories</a></li>
-      <li><a href="{% url 'how_it_works' %}">How It Works</a></li>
-      <li><a href="{% url 'contact' %}">Contact</a></li>
+      <!-- <li><a href="{% url 'how_it_works' %}">How It Works</a></li>
+      <li><a href="{% url 'contact' %}">Contact</a></li> -->
     {% if user.is_authenticated %}
     <li><a href="{% url 'my_account' %}">My Account</a></li>
     <li><a href="{% url 'logout' %}">Logout</a></li>
-{% else %}
+    {% else %}
     <a href="{% url 'join' %}"><button class="join-btn">Join</button></a>
-{% endif %}
+    {% endif %}
     </ul>
   </nav>
 
@@ -31,12 +31,14 @@
     <h1>Find the Best Designers</h1>
     <p>Connect with top talent to bring your ideas to life.</p>
     <div class="search-bar">
-      <input type="text" id="searchInput" placeholder="Search for for any service....">
+      <input type="text" id="searchInput" placeholder="Search for any service....">
       <button id="searchButton">Search</button>
     </div>
   </header>
+
   <script>
-    document.getElementById("searchButton").addEventListener("click", function () {
+    // Function to perform search
+    function performSearch() {
         let query = document.getElementById("searchInput").value.toLowerCase();
         let profiles = document.querySelectorAll(".profile");
         let found = false;
@@ -60,16 +62,48 @@
         } else if (noResults) {
             noResults.remove();
         }
+
+        // Show "Go Back" button if search results are found
+        document.getElementById("goBackButton").style.display = "inline-block";
+    }
+
+    // Event listener for the search button click
+    document.getElementById("searchButton").addEventListener("click", performSearch);
+
+    // Event listener for Enter key press
+    document.getElementById("searchInput").addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+            performSearch();  // Trigger search when Enter is pressed
+        }
     });
-</script>
 
+    // Function to reset the search and show all profiles again
+    function goBack() {
+        // Reset the search input field
+        document.getElementById("searchInput").value = "";
 
-<section class="featured">
-  <h2>Featured Professionals</h2>
-  <div class="profiles">
+        // Show all profiles
+        let profiles = document.querySelectorAll(".profile");
+        profiles.forEach(profile => {
+            profile.style.display = "block";
+        });
+
+        // Hide the "Go Back" button
+        document.getElementById("goBackButton").style.display = "none";
+
+        // Remove the "No results found" message if it exists
+        let noResults = document.getElementById("noResultsMessage");
+        if (noResults) {
+            noResults.remove();
+        }
+    }
+  </script>
+
+  <section class="featured">
+    <h2>Featured Professionals</h2>
+    <div class="profiles">
       {% for freelancer in freelancers %}
       <div class="profile">
-          <!-- <img src="{% static 'images/designer.jpg' %}" alt="{{ freelancer.name }}"> -->
           <h3>{{ freelancer.name }}</h3>
           <p>{{ freelancer.subcategory }}</p>
           <a href="{% url 'profile' freelancer.id %}"><button>View Profile</button></a>
@@ -77,8 +111,11 @@
       {% empty %}
       <p>No freelancers found.</p>
       {% endfor %}
-  </div>
-</section>
+    </div>
+    
+    <!-- Go Back Button (Initially Hidden) -->
+    <button id="goBackButton" style="display: none;" onclick="goBack()">← Back to home</button>
+  </section>
 
   <footer>
     <p>&copy; 2025 HireTalent. Find the best professionals today!</p>
