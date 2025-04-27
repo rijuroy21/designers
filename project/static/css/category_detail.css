@@ -144,4 +144,36 @@ footer {
     background: #0c3f27;
     color: #ffffff;
     font-size: 14px;
+    margin-top: auto; /* This ensures the footer stays at the bottom */
+    width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero {
+        padding: 50px 20px;
+    }
+
+    .category-detail {
+        padding: 30px 15px;
+    }
+
+    .category-detail li {
+        font-size: 14px;
+    }
+
+    .back-button {
+        padding: 8px 16px;
+    }
 }

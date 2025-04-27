@@ -5,7 +5,6 @@ from django.contrib.auth.models import User
 from .models import *
 
 
-# User Registration Form
 class RegisterForm(UserCreationForm):
     email = forms.EmailField()
 

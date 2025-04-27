@@ -9,7 +9,6 @@ from .models import *
 from .forms import RegisterForm, FreelancerEditForm
 
 
-# User Registration View
 def register_view(request):
     if request.method == 'POST':
         username = request.POST['username']
@@ -37,7 +36,6 @@ def register_view(request):
     return render(request, 'register.html')
 
 
-# User Login View
 def login_view(request):
     if request.method == 'POST':
         username = request.POST['username']
@@ -54,13 +52,11 @@ def login_view(request):
     return render(request, 'login.html')
 
 
-# User Logout View
 def logout_view(request):
     auth.logout(request)
     return redirect('login')
 
 
-# Forgot Password View
 def forgot_password_view(request):
     if request.method == 'POST':
         email = request.POST.get('email')
@@ -83,7 +79,6 @@ def forgot_password_view(request):
     return render(request, 'forgot_password.html')
 
 
-# OTP Verification View
 def verify_otp(request):
     if request.method == 'POST':
         entered_otp = request.POST.get('otp')
@@ -96,7 +91,6 @@ def verify_otp(request):
     return render(request, 'verify_otp.html')
 
 
-# Password Reset View
 def reset_password(request):
     if request.method == 'POST':
         new_password = request.POST.get('new_password')
@@ -115,7 +109,6 @@ def reset_password(request):
     return render(request, 'reset_password.html')
 
 
-# Home Page View
 def home(request):
     freelancers = Freelancer.objects.all()
     return render(request, 'home.html', {'freelancers': freelancers})
@@ -177,7 +170,6 @@ def join(request):
         return redirect('home')
 
     return render(request, 'join.html')
-
 
 
 @login_required

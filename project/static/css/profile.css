@@ -1,10 +1,18 @@
-/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #F4F4F4;
     color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 h1 {
@@ -29,7 +37,6 @@ button:hover {
     background-color: #145c41;
 }
 
-/* Navigation Bar */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -65,21 +72,6 @@ button:hover {
     color: #198754;
 }
 
-.join-btn {
-    background-color:#198754;
-    color: white;
-    padding: 8px 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-.join-btn:hover {
-    background-color: #0c3f27;
-}
-
-/* Profile Section */
 .profile {
     max-width: 800px;
     margin: 40px auto;
@@ -119,16 +111,14 @@ button:hover {
     margin: 5px 0;
 }
 
-/* Profile Image */
 .profile img {
     border-radius: 50%;
-    width: 150px; /* Adjust as needed */
-    height: 150px; /* Adjust as needed */
+    width: 150px;
+    height: 150px;
     object-fit: cover;
     margin-bottom: 20px;
 }
 
-/* Button Styles */
 .button-container {
     display: flex;
     justify-content: space-between;
@@ -149,7 +139,6 @@ button:hover {
     background-color: #218838;
 }
 
-/* Hire Now Button */
 .hire-now {
     margin-top: 30px;
 }
@@ -172,11 +161,12 @@ button:hover {
     transform: translateY(-2px);
 }
 
-/* Footer */
 footer {
     text-align: center;
     padding: 30px;
     background: #0c3f27;
     color: #ffffff;
     font-size: 14px;
+    margin-top: auto;
+    width: 100%;
 }

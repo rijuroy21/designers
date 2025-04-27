@@ -1,10 +1,12 @@
-/* General Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #F4F4F4;
     color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
 }
 
 h1 {
@@ -23,13 +25,14 @@ button {
     cursor: pointer;
     border-radius: 5px;
     font-size: 16px;
+    transition: background-color 0.3s ease-in-out;
 }
 
 button:hover {
     background-color: #145c41;
 }
 
-/* Navigation Bar */
+
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -58,7 +61,7 @@ button:hover {
     color: white;
     text-decoration: none;
     font-size: 16px;
-    transition: 0.3s;
+    transition: color 0.3s ease-in-out;
 }
 
 .nav-links a:hover {
@@ -73,13 +76,14 @@ button:hover {
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
+    transition: background-color 0.3s ease-in-out;
 }
 
 .join-btn:hover {
     background-color: #0c3f27;
 }
 
-/* Hero Section */
+
 .hero {
     background-color: #0c3f27;
     text-align: center;
@@ -87,7 +91,7 @@ button:hover {
     color: #ffffff;
 }
 
-/* Subcategory Detail Section */
+
 .subcategory-detail {
     text-align: center;
     padding: 50px 20px;
@@ -109,7 +113,7 @@ button:hover {
     margin: 10px 0;
     padding: 12px;
     border-radius: 5px;
-    transition: background 0.3s ease;
+    transition: background 0.3s ease-in-out;
 }
 
 .subcategory-detail li:hover {
@@ -122,7 +126,7 @@ button:hover {
     font-size: 16px;
 }
 
-/* Back Button */
+
 .back-button {
     display: inline-block;
     margin-top: 20px;
@@ -131,18 +135,48 @@ button:hover {
     color: white;
     text-decoration: none;
     border-radius: 5px;
-    transition: background 0.3s;
+    transition: background 0.3s ease-in-out;
 }
 
 .back-button:hover {
     background: #555;
 }
 
-/* Footer */
 footer {
     text-align: center;
     padding: 30px;
     background: #0c3f27;
     color: #ffffff;
     font-size: 14px;
+    margin-top: auto; 
+}
+
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero {
+        padding: 50px 20px;
+    }
+
+    .subcategory-detail {
+        padding: 30px 15px;
+    }
+
+    .subcategory-detail li {
+        font-size: 14px;
+    }
+
+    .back-button {
+        padding: 8px 16px;
+    }
 }

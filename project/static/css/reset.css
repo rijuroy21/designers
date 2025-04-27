@@ -1,4 +1,4 @@
-/* Global Reset */
+
 * {
     margin: 0;
     padding: 0;
@@ -18,7 +18,7 @@ body {
     flex-direction: column;
 }
 
-/* Container */
+
 form {
     background-color: white;
     padding: 30px 40px;
@@ -29,14 +29,12 @@ form {
     text-align: center;
 }
 
-/* Title */
 h2 {
     color: #2c3e50;
     margin-bottom: 20px;
     font-size: 1.8rem;
 }
 
-/* Form Input */
 input[type="password"] {
     width: 100%;
     padding: 12px;
@@ -52,7 +50,7 @@ input[type="password"]:focus {
     outline: none;
 }
 
-/* Submit Button */
+
 button {
     width: 100%;
     background-color: #249d79;
@@ -69,7 +67,7 @@ button:hover {
     background-color: #1d7c63;
 }
 
-/* Messages */
+
 .message-container {
     margin-top: 15px;
 }
@@ -79,7 +77,7 @@ button:hover {
     font-size: 0.95rem;
 }
 
-/* Link Back */
+
 p a {
     display: inline-block;
     margin-top: 15px;

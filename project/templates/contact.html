@@ -9,22 +9,17 @@
 </head>
 <body>
 
-    <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="logo">HireTalent</div>
         <ul class="nav-links">
             <li><a href="{% url 'home' %}">Home</a></li>
             <li><a href="{% url 'categories' %}">Categories</a></li>
-            <!-- <li><a href="{% url 'how_it_works' %}">How It Works</a></li>
-            <li><a href="{% url 'contact' %}" class="active">Contact</a></li> -->
             <li><a href="{% url 'my_account' %}">My Account</a></li>
             <li><a href="{% url 'logout' %}">Logout</a></li>
           
         </ul>
         {% comment %} <button class="join-btn">Join</button> {% endcomment %}
     </nav>
-
-    <!-- Contact Page -->
     <section class="contact-container">
         <h1>Contact Us</h1>
         <p>Got a question? We'd love to hear from you.</p>
@@ -54,7 +49,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <p>&copy; 2025 HireTalent. Connecting you with top professionals.</p>
     </footer>

@@ -1,4 +1,3 @@
-/* General Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -7,7 +6,6 @@ body {
     color: #333;
 }
 
-/* Navigation Bar */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -43,7 +41,6 @@ body {
     color: #198754;
 }
 
-/* Hero Section */
 .hero {
     background-color: #0c3f27;
     text-align: center;
@@ -60,7 +57,6 @@ body {
     font-size: 18px;
 }
 
-/* Freelancer Form Section */
 .freelancer-form {
     width: 50%;
     margin: 40px auto;
@@ -97,7 +93,6 @@ body {
     resize: none;
 }
 
-/* Work Images Section */
 #image-input-container {
     margin-top: 20px;
 }
@@ -113,16 +108,15 @@ body {
     flex-grow: 1;
 }
 
-/* Adjusted Remove Button to fit its content */
 .remove-btn {
-    width: auto;    /* Set width to auto to fit the text */
-    height: 45px;   /* Adjusted to match input height */
-    padding: 0 5px; /* Horizontal padding to fit text */
-    font-size: 12px; /* Adjusted font size */
+    width: auto;
+    height: 45px;
+    padding: 0 5px;
+    font-size: 12px;
     background-color: #dc3545;
     color: white;
     border: none;
-    border-radius: 5px;  /* Slightly rounded */
+    border-radius: 5px;
     cursor: pointer;
     text-align: center;
     display: flex;
@@ -135,27 +129,25 @@ body {
     background-color: #c82333;
 }
 
-/* Plus Button */
 #add-image-btn {
-    padding: 3px 6px;  /* Reduced padding */
+    padding: 3px 6px;
     background-color: #007bff;
     color: white;
     border: none;
     border-radius: 50%;
     cursor: pointer;
-    font-size: 14px;  /* Small font size */
+    font-size: 14px;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 25px;  /* Smaller width */
-    height: 25px;  /* Smaller height */
+    width: 25px;
+    height: 25px;
 }
 
 #add-image-btn:hover {
     background-color: #0056b3;
 }
 
-/* Submit Button */
 .freelancer-form button {
     width: 100%;
     padding: 12px;
@@ -173,7 +165,6 @@ body {
     background-color: #146c43;
 }
 
-/* Footer */
 footer {
     text-align: center;
     padding: 30px;

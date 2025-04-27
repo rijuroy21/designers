@@ -11,14 +11,11 @@
 
 <body>
 
-    <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="logo">HireTalent</div>
         <ul class="nav-links">
             <li><a href="{% url 'home' %}">Home</a></li>
             <li><a href="{% url 'categories' %}">Categories</a></li>
-            <!-- <li><a href="{% url 'how_it_works' %}">How It Works</a></li>
-            <li><a href="{% url 'contact' %}">Contact</a></li> -->
             <li><a href="{% url 'my_account' %}">My Account</a></li>
             <li><a href="{% url 'logout' %}">Logout</a></li>
         </ul>
@@ -29,7 +26,6 @@
         <p>Explore talented professionals specializing in {{ subcategory.name }}.</p>
     </header>
 
-    <!-- Subcategory Detail -->
     <section class="subcategory-detail">
         {% if freelancers %}
         <ul>
